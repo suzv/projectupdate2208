@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    editable="true"
+    id="CoverablesLV"
+    visible="true">
+    <Require
+      name="anABContact"
+      type="ABContact"/>
+    <ExposeIterator
+      valueType="entity.Coverable_Ext"
+      widget="CoverablesLV"/>
+    <RowIterator
+      editable="true"
+      elementName="coverable"
+      toAdd="anABContact.addToCoverable(coverable)"
+      value="anABContact.Coverable"
+      valueType="Coverable_Ext[]">
+      <Row
+        editable="true">
+        <TextCell
+          editable="true"
+          id="CostoReposicion"
+          label="&quot;Costo de reposicion&quot;"
+          value="coverable.CostoReposicion"
+          valueType="java.math.BigDecimal"
+          visible="true"/>
+        <DateCell
+          editable="true"
+          id="FechaIncidente"
+          label="&quot;Fecha Incidente&quot;"
+          value="coverable.Adquisicion"
+          visible="true"/>
+        <TextCell
+          editable="true"
+          id="UbicacionAsociada"
+          label="&quot;Ubicacion&quot;"
+          value="coverable.UbicacionAsociada"
+          visible="true"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>

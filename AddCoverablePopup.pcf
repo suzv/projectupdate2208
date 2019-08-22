@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Popup
+    canEdit="true"
+    canVisit="true"
+    id="AddCoverablePopup"
+    returnType="Coverable_Ext"
+    startInEditMode="true"
+    title="&quot;PopupAdd&quot;">
+    <LocationEntryPoint
+      signature="AddCoverablePopup(anABContact : ABContact)"/>
+    <Variable
+      name="anABContact"
+      type="ABContact"/>
+    <Variable
+      initialValue="new Coverable_Ext()"
+      name="anCoverable"
+      type="Coverable_Ext"/>
+    <Screen>
+      <Toolbar>
+        <EditButtons
+          cancelVisible="false"
+          editVisible="false"/>
+      </Toolbar>
+      <DetailViewPanel>
+        <InputColumn>
+          <Label
+            label="&quot;Auto&quot;"/>
+          <TextInput
+            editable="true"
+            id="costoReposicion"
+            label="&quot;costoReposicion&quot;"
+            value="anCoverable.CostoReposicion"
+            valueType="java.math.BigDecimal"/>
+          <TextInput
+            editable="true"
+            id="ubicacionAsociada"
+            label="&quot;ubicacionAsociada&quot;"
+            value="anCoverable.CostoReposicion"
+            valueType="java.math.BigDecimal"/>
+          <TextInput
+            editable="true"
+            id="adquisicion"
+            label="&quot;adquisicion&quot;"
+            value="anCoverable.CostoReposicion"
+            valueType="java.math.BigDecimal"/>
+          <InputDivider/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

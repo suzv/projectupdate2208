@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../pcf.xsd">
+  <Popup
+    canEdit="true"
+    canVisit="true"
+    id="PaginaAddDWELLINGPopup"
+    startInEditMode="true"
+    title="&quot;PopupAdd&quot;">
+    <LocationEntryPoint
+      signature="PaginaAddDWELLINGPopup(anABContact:ABContact)"/>
+    <Variable
+      name="anABContact"
+      type="ABContact"/>
+    <Variable
+      name="anIncidente"
+      type="Incidente_Ext"/>
+    <Screen>
+      <Toolbar>
+        <EditButtons
+          cancelVisible="false"
+          editVisible="false"/>
+      </Toolbar>
+      <DetailViewPanel>
+        <InputColumn>
+          <Label
+            label="&quot;New Incident&quot;"/>
+          <DateInput
+            editable="true"
+            id="DateIncident"
+            label="&quot;Date Incident&quot;"
+            value="anIncidente.FechaIncidente"/>
+          <TextInput
+            editable="true"
+            id="IncidentLocation"
+            label="&quot;Incident Location&quot;"
+            value="anIncidente.Ubicacion"/>
+          <TextInput
+            editable="true"
+            id="MontoCoberturaId"
+            label="&quot;Amount Covered&quot;"
+            value="anIncidente.MontoCobertura"
+            valueType="java.math.BigDecimal"/>
+          <TextInput
+            editable="true"
+            id="Observation"
+            label="&quot;Observation&quot;"
+            value="anIncidente.Observaciones"/>
+          <TextInput
+            editable="true"
+            id="Incidenttype"
+            label="&quot;Incident Type&quot;"
+            value="anIncidente.TipoIncidente"/>
+          <Label
+            label="&quot;Dwelling&quot;"/>
+          <TextInput
+            editable="true"
+            id="idDimension"
+            label="&quot;Dimension&quot;"
+            value="(anIncidente.Coverable as Dwelling_Ext).Metraje"
+            valueType="java.lang.Integer"/>
+          <RangeInput
+            editable="true"
+            id="idTipoTecho"
+            label="&quot;Roof type&quot;"
+            value="(anIncidente.Coverable as Dwelling_Ext).TipoDeTecho"
+            valueRange="typekey.TipoTecho_Ext.AllTypeKeys"
+            valueType="typekey.TipoTecho_Ext"/>
+          <RangeInput
+            editable="true"
+            id="idHeatingTye"
+            label="&quot;heating type&quot;"
+            value="(anIncidente.Coverable as Dwelling_Ext).TipoDeCalefaccion"
+            valueRange="typekey.Calefaccion_Ext.AllTypeKeys"
+            valueType="typekey.Calefaccion_Ext"/>
+          <RangeInput
+            editable="true"
+            id="idBuildingType"
+            label="&quot;Building type&quot;"
+            value="(anIncidente.Coverable as Dwelling_Ext).MaterialDeConstruccion"
+            valueRange="typekey.MatConstruccion_Ext.AllTypeKeys"
+            valueType="typekey.MatConstruccion_Ext"/>
+          <RangeInput
+            editable="true"
+            id="idOcupationType"
+            label="&quot;Ocupation Type&quot;"
+            value="(anIncidente.Coverable as Dwelling_Ext).TipoDeOcupacion"
+            valueRange="typekey.Ocupacion_Ext.AllTypeKeys"
+            valueType="typekey.Ocupacion_Ext"/>
+        </InputColumn>
+      </DetailViewPanel>
+    </Screen>
+  </Popup>
+</PCF>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<PCF
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../../../../../pcf.xsd">
+  <ListViewPanel
+    editable="false"
+    id="IncidentesLV"
+    visible="true">
+    <Require
+      name="anABContact"
+      type="ABContact"/>
+    <RowIterator
+      editable="false"
+      elementName="Incidente"
+      id="IncidentesrowID"
+      pickLocation="PaginaAddCARPopup.push()"
+      value="anABContact.Incidentes"
+      valueType="Incidente_Ext[]">
+      <Row>
+        <TextCell
+          id="TipoDeIncidente"
+          label="&quot;Tipo de Incidente&quot;"
+          value="Incidentes.TipoIncidente"/>
+        <ButtonCell
+          action="PaginaAddCARPopup.push(Incidentes)"
+          align="center"
+          hideIfDisabled="false"
+          id="ViewButton"
+          label="DisplayKey.get(&quot;Training.View&quot;)"
+          value="&quot;View/Edit&quot;"/>
+        <DateCell
+          id="FechaIncidente"
+          label="&quot;Fecha Incidente&quot;"
+          value="Incidentes.FechaIncidente"/>
+        <TextCell
+          id="UbicacionId"
+          label="&quot;Ubicacion&quot;"
+          value="Incidentes.Ubicacion"/>
+        <TextCell
+          id="CostoReparacionId"
+          label="&quot;Costo de Reposicion&quot;"
+          value="(Incidentes.MontoCobertura as String)"/>
+        <TypeKeyCell
+          id="TipoDeCoverable"
+          label="&quot;Tipo de Coverable&quot;"
+          valueType="CoverableType"/>
+        <TextAreaCell
+          id="ObservacionesId"
+          label="&quot;Observaciones&quot;"
+          value="Incidentes.Observaciones"/>
+      </Row>
+    </RowIterator>
+  </ListViewPanel>
+</PCF>
